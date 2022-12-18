@@ -1,0 +1,27 @@
+// app global css in SCSS form
+
+// стиль для проверки разметки
+.test_Style {
+  border: 1px solid black;
+  background: rgba(242, 192, 55, 0.11);
+}
+
+.main_container {
+  display: flex;
+  padding: 10px;
+}
+
+.tags_group {
+  max-width: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags_button {
+  height: fit-content;
+  width: fit-content;
+}
+
+.tags_container {
+  flex-grow: 2;
+}
