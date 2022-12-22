@@ -35,6 +35,7 @@ func ImageAndTagsRouter(imageRepo *repositories.ImageRepository, tagRepo *reposi
 		//app.Get("images", GetAllImagesFromFS())
 		app.Get("images/{title}", GetImageById())
 		app.Get("images/{title}/info", GetImageInfoById(imageRepo))
+		app.Get("tags", GetAllTags(tagRepo))
 		app.Use(Verify()) // protect the next routes with JWT.
 
 		app.Post("images/{title}/update_tags", UpdateTags(imageRepo, tagRepo))
@@ -42,7 +43,6 @@ func ImageAndTagsRouter(imageRepo *repositories.ImageRepository, tagRepo *reposi
 		app.Post("images/actions/add_tag", AddTag(tagRepo, imageRepo))
 		app.Post("images/actions/delete", DeleteImages(imageRepo))
 
-		app.Get("tags", GetAllTags(tagRepo))
 
 		app.Use(Verify()) // protect the next routes with JWT.
 	}
