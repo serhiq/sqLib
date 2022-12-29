@@ -78,5 +78,21 @@ services:
     networks:
       - gateway
 
+  bot-service:
+    build:
+      context: ./../bot-service
+      dockerfile: ./../bot-service/bot-service.dockerfile
+
+    environment:
+     TELEGRAM_TOKEN: "enter your token"
+     CHAT_ID: "enter your chat_id"
+
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - gateway
+    
+
 networks:
   gateway: {}

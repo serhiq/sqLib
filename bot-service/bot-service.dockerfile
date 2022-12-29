@@ -7,15 +7,15 @@ COPY . /app
 
 WORKDIR /app
 
-RUN CGO_ENABLED=0 go build -o brokerApp ./cmd/
+RUN CGO_ENABLED=0 go build -o bot ./
 
-RUN chmod +x /app/brokerApp
+RUN chmod +x /app/bot
 
 # build a tiny docker image
 FROM alpine:latest
 
 RUN mkdir /app
 
-COPY --from=builder /app/brokerApp /app
+COPY --from=builder /app/bot /app
 
-CMD [ "/app/brokerApp" ]
+CMD [ "/app/bot" ]

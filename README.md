@@ -3,6 +3,7 @@
 - api -  golang + iris
 - frontend - Vue.js  + Quasar
 - database - MySQL
+- telegram bot - golang
 
 
 
@@ -32,3 +33,15 @@ docker-compose up --build
 **Backend**
 
 [http://localhost:5555/](http://localhost:7777/)
+
+
+**An Bot service**
+
+telegram bot written in Golang to check the health of the service.
+
+**Environment Variables**
+
+| Name              | Description                           | Default     |
+|-------------------|---------------------------------------|-------------|
+| TELEGRAM_TOKEN    | Token create for Bot                  |   -         |
+| CHAT_ID           | Chat id as receiver for our messages  |   -         |
